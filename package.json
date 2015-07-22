@@ -1,5 +1,5 @@
 {
-  "name": "labidee_token_security",
+  "name": "token_security",
   "version": "0.0.0",
   "private": true,
   "scripts": {
