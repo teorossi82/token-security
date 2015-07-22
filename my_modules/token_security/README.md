@@ -1,8 +1,9 @@
 # token-security
 
-[Token security]() Functionality to protect /api/* uri with login and access-token.
+Functionality to protect /api/* uri with login and access-token.
 
-# Copy in app.js these lines
+## Copy in your server directory the folder my_modules
+## Copy in app.js these lines
 ```javascript
 
 // the phantom_db.js file simulate the presence of a db but not implement it. So you have to modify this file to get access to user table/collection in your db.
@@ -33,15 +34,20 @@ app.post("/token/new",function(req,res){
 app.post('/login', function(req,res){db.checkLogin(req,res,response.responseMessage)});
 
 ```
-# To have access to all /api/* uri the client must do:
-# 1 - a post request to /login with 2 field in body: username and password
-# 2 - if the login have success the request return a json object with these fields: access_token, expires_access_token, refresh_token, expires_refresh_token, user
-# 3 - after success login, to have access to /api/* uri the client must do all request with "x-access-token": access_token and "x-access-username": user.username in the header
-# 4 - when access_token expires, the client must do a post request to /token/new with "x-access-token": access_token, "x-refresh-token": refresh_token and "x-access-username": user.username in the header to renew the tokens
+## Usage with client
+To have access to all /api/* uri the client must do:
 
-# In the file config/secret you can set the passphrase to encode and decode the tokens and the validity of access_token and refresh_token
+1 - a post request to /login with 2 field in body: username and password
 
-# This functionality use node-jwt-simple to encode e decode the access-token and refresh-token
+2 - if the login have success the request return a json object with these fields: access_token, expires_access_token, refresh_token, expires_refresh_token, user
+
+3 - after success login, to have access to /api/* uri the client must do all request with "x-access-token": access_token and "x-access-username": user.username in the header
+
+4 - when access_token expires, the client must do a post request to /token/new with "x-access-token": access_token, "x-refresh-token": refresh_token and "x-access-username": user.username in the header to renew the tokens
+
+In the file config/secret you can set the passphrase to encode and decode the tokens and the validity of access_token and refresh_token
+
+This functionality use node-jwt-simple to encode e decode the access-token and refresh-token
 
 # node-jwt-simple
 
