@@ -1,9 +1,9 @@
 module.exports = {
   access_token: function() {
-    return '!!mark3t1n8p1@n#@';
+    return 'secretkey';
   },
   refresh_token: function() {
-    return '@!m@r3e7ing6l@n#!';
+    return 'anothersecretkey';
   },
   validity_access_token: function() {
     return 1;
