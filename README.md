@@ -34,6 +34,7 @@ app.post("/token/new",function(req,res){
 app.post('/login', function(req,res){db.checkLogin(req,res,response.responseMessage)});
 
 ```
+## Usage with client
 To have access to all /api/* uri the client must do:
 
 1 - a post request to /login with 2 field in body: username and password
