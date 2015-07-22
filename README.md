@@ -1,6 +1,6 @@
 # token-security
 
-[Token security]() Functionality to protect /api/* uri with login and access-token.
+Functionality to protect /api/* uri with login and access-token.
 
 ## Copy in your server directory the folder my_modules
 ## Copy in app.js these lines
